@@ -1,0 +1,80 @@
+* { box-sizing: border-box; margin: 0; }
+
+body {
+  min-height: 100vh;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  color: #e8e8f0;
+  background: radial-gradient(circle at 20% 20%, #2a1b5e, transparent 45%),
+    radial-gradient(circle at 80% 80%, #0e4b5a, transparent 45%), #0b0b14;
+  background-attachment: fixed;
+}
+
+main { max-width: 1000px; margin: 0 auto; padding: 48px 20px; }
+
+h1 {
+  text-align: center;
+  margin-bottom: 36px;
+  font-weight: 300;
+  font-size: clamp(1.4rem, 5vw, 2rem);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+h2 { font-size: 1rem; font-weight: 500; margin-bottom: 4px; color: #b9b9d6; }
+label { color: #8c8ca8; font-size: 0.9rem; }
+
+.siatka { display: grid; grid-template-columns: 1fr 1.3fr; gap: 20px; align-items: start; }
+.kolumna { display: grid; gap: 20px; }
+
+.szklo {
+  display: grid;
+  gap: 12px;
+  padding: 24px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.25);
+  color: inherit;
+  outline: none;
+}
+input:focus { border-color: #8b7bff; }
+input[type='range'] { padding: 0; accent-color: #8b7bff; }
+
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  cursor: pointer;
+  background: linear-gradient(135deg, #7c5cff, #29b6d6);
+  transition: transform 0.15s, opacity 0.15s;
+}
+button:hover:not(:disabled) { transform: translateY(-1px); opacity: 0.9; }
+button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+button:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.wpis {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.05);
+}
+.wpis div:first-child { display: grid; min-width: 0; overflow-wrap: anywhere; }
+.wpis span, .puste { color: #8c8ca8; font-size: 0.85rem; }
+.akcje { display: flex; gap: 8px; }
+.usun { background: rgba(255, 90, 110, 0.25); }
+
+@media (max-width: 760px) { .siatka { grid-template-columns: 1fr; } }
